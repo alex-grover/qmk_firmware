@@ -28,25 +28,29 @@
 #define HRM_L LALT_T(KC_L)
 #define HRM_SCLN RCTL_T(KC_SCLN)
 
+// Thumb layer taps
+#define THM_SPC LT(2, KC_SPC)
+#define THM_BSPC LT(1, KC_BSPC)
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Base layer
  * ,-------------------------------------------------------------------------.
- * | Esc |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |  Bksp |
+ * | Esc |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |       |
  * |-------------------------------------------------------------------------+
- * | Tab  |  A  |  S  |  D  |  F  |  G  |  H  |  J  |  K  |  L  |  ;  |   '  |
+ * | Tab  |A/Ctl|S/Alt|D/Gui|F/Sft|  G  |  H  |J/Sft|K/Gui|L/Alt|;/Ctl|   '  |
  * |-------------------------------------------------------------------------+
- * | Shift |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  | Ent |
+ * | Shift |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  |     |
  * |-------------------------------------------------------------------------+
- * | App | Ctrl| Alt | GUI |  L2  |   Space   |  L1  | Left| Down|  Up |Right|
+ * |     |     |     | Esc |Spc/L2|   Enter   |Bsp/L1| Left| Down|  Up |Right|
  * `-------------------------------------------------------------------------'
  */
 LAYOUT(
-  _______, KC_Q,    KC_W,    KC_E,    KC_R,  KC_T, KC_Y, KC_U,  KC_I,    KC_O,    KC_P,    KC_BSPC,
-  KC_TAB,  HRM_A,   HRM_S,   HRM_D,   HRM_F, KC_G, KC_H, HRM_J, HRM_K,   HRM_L,   HRM_SCLN,KC_QUOT,
-  _______, KC_Z,    KC_X,    KC_C,    KC_V,  KC_B, KC_N, KC_M,  KC_COMM, KC_DOT,  KC_SLSH, KC_ENT ,
-  _______, _______, _______, KC_ESC,  MO(2),   KC_SPC,   MO(1), KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+  _______, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T, KC_Y, KC_U,     KC_I,    KC_O,    KC_P,    _______,
+  KC_TAB,  HRM_A,   HRM_S,   HRM_D,   HRM_F,   KC_G, KC_H, HRM_J,    HRM_K,   HRM_L,   HRM_SCLN,KC_QUOT,
+  _______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B, KC_N, KC_M,     KC_COMM, KC_DOT,  KC_SLSH, _______,
+  _______, _______, _______, KC_ESC,  THM_SPC,   KC_ENT,   THM_BSPC, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* Layer 1 (Right)
